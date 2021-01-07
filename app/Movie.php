@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model
 {
-    protected $fillable = [
-        'title',
-    ];
+    protected $guarded = array('id');
+    
+    public static $rules = array(
+        'title' => 'required',
+    );
 }

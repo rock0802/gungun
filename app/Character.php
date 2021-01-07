@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Character extends Model
 {
-    protected $fillable = [
-        'movies_id',
-        'character_name',
-    ];
+    protected $guarded = array('id');
+    
+    public static $rules = array(
+       'character_name' => 'required'
+    );
+    public function movies()
+    {
+        return $this->belongsto('App\Movie');
+    }
 }
