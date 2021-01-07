@@ -11,4 +11,8 @@ class Movie extends Model
     public static $rules = array(
         'title' => 'required',
     );
+    public function characters()
+    {
+        return $this->hasMany(character::class);
+    }
 }

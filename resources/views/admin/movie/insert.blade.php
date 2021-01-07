@@ -7,7 +7,7 @@
         　<div class="row">
             　<div class="col-md-8 mx-auto">
                 　<h2>映画タイトルと登場人物を登録</h2>
-                　<form action="{{action('Admin\MovieController@add')}}" method="post"enctype="multipart/form-data">
+                　<form action="{{action('Admin\MovieController@register')}}" method="post"enctype="multipart/form-data">
                 　    @if (count($errors) > 0)
                 　        <ul>
                 　            @foreach($errors->all() as $e)
@@ -24,43 +24,43 @@
                 　    <div class="form-group row">
                 　        <label class="col-md-2">キャラクター1</label>
                 　        <div class="col-md-10">
-                　             <input type="text" class="form-control" name="character_name" value="{{ old('character_name') }}">
+                　             <input type="text" class="form-control" name="character_name[]" value="{{ old('character_name') }}">
                 　        </div>
                 　    </div>
                 　    <div class="form-group row">
                 　        <label class="col-md-2">キャラクター2</label>
                 　        <div class="col-md-10">
-                　             <input type="text" class="form-control" name="character_name" value="{{ old('character_name') }}">
+                　             <input type="text" class="form-control" name="character_name[]" value="{{ old('character_name') }}">
                 　        </div>
                 　    </div>
                 　    <div class="form-group row">
                 　        <label class="col-md-2">キャラクター3</label>
                 　        <div class="col-md-10">
-                　             <input type="text" class="form-control" name="character_name" value="{{ old('character_name') }}">
+                　             <input type="text" class="form-control" name="character_name[]" value="{{ old('character_name') }}">
                 　        </div>
                 　    </div>
                 　    <div class="form-group row">
                 　        <label class="col-md-2">キャラクター4</label>
                 　        <div class="col-md-10">
-                　             <input type="text" class="form-control" name="character_name" value="{{ old('character_name') }}">
+                　             <input type="text" class="form-control" name="character_name[]" value="{{ old('character_name') }}">
                 　        </div>
                 　    </div>
                 　    <div class="form-group row">
                 　        <label class="col-md-2">キャラクター5</label>
                 　        <div class="col-md-10">
-                　             <input type="text" class="form-control" name="character_name" value="{{ old('character_name') }}">
+                　             <input type="text" class="form-control" name="character_name[]" value="{{ old('character_name') }}">
                 　        </div>
                 　    </div>
                 　    <div class="form-group row">
                 　        <label class="col-md-2">キャラクター6</label>
                 　        <div class="col-md-10">
-                　             <input type="text" class="form-control" name="character_name" value="{{ old('character_name') }}">
+                　             <input type="text" class="form-control" name="character_name[]" value="{{ old('character_name') }}">
                 　        </div>
                 　    </div>
                 　    <div class="form-group row">
                 　        <label class="col-md-2">キャラクター7</label>
                 　        <div class="col-md-10">
-                　             <input type="text" class="form-control" name="character_name" value="{{ old('character_name') }}">
+                　             <input type="text" class="form-control" name="character_name[]" value="{{ old('character_name') }}">
                 　        </div>
                 　    </div>
                 　    {{ csrf_field() }}

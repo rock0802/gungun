@@ -11,8 +11,8 @@ class Character extends Model
     public static $rules = array(
        'character_name' => 'required'
     );
-    public function movies()
+    public function movie()
     {
-        return $this->belongsto('App\Movie');
+        return $this->belongsTo(Movie::class);
     }
 }
