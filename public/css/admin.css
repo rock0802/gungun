@@ -1,0 +1,14 @@
+body {
+  background-image: url(/images/green.jpg?2f725b550228c29b257e6b72adcc9fe1);
+  background-size: cover;
+}
+
+.col-md-2 {
+  color: #FFFFFF;
+}
+
+.h2 {
+  color: #FFFFFF;
+  text-align: center;
+}
+

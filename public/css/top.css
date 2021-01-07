@@ -1,0 +1,35 @@
+body {
+  height: 800px;
+  background-image: url(/images/Soldiers.jpg?487808193cd4abd40c73f6c2a768ce2a);
+  background-size: cover;
+}
+
+.header {
+  height: 50px;
+  margin-bottom: 100px;
+}
+
+.main {
+  height: 500px;
+  text-align: center;
+}
+
+h2 {
+  color: #ff0000;
+}
+
+input {
+  width: 500px;
+  margin-left: 20px;
+  border: none;
+}
+
+.serch {
+  margin: 30px auto;
+  width: 600px;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  padding: 10px 5px;
+  box-shadow: 1px 1px 1px 1px lightgray;
+}
+
