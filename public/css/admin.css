@@ -5,10 +5,71 @@ body {
 
 .col-md-2 {
   color: #FFFFFF;
+  padding-top: 6px;
 }
 
-.h2 {
-  color: #FFFFFF;
+.form-group row {
+  margin-top: 5px;
+}
+
+.form-control {
+  border: 3px solid green;
+}
+
+.main {
+  margin: 0 auto;
+}
+
+.my-big {
+  font-size: 15em;
+}
+
+.master {
+  float: left;
+  width: 50%;
+}
+
+.fa-stack-1x {
+  font-size: 0.3em;
+  margin-top: 85px;
+  font-color: #FFFFFF;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.top-wrapper {
   text-align: center;
+  padding-bottom: 30px;
+  color: #FFFFFF;
+}
+
+.blink {
+  -webkit-animation: blinkAnime 1s infinite alternate;
+          animation: blinkAnime 1s infinite alternate;
+  font-size: 20px;
+}
+
+@-webkit-keyframes blinkAnime {
+  0% {
+    color: #000000;
+  }
+
+  100% {
+    color: #ff0000;
+  }
+}
+
+@keyframes blinkAnime {
+  0% {
+    color: #000000;
+  }
+
+  100% {
+    color: #ff0000;
+  }
 }
 

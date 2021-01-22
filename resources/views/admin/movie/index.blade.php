@@ -1,10 +1,11 @@
 @extends('layouts.admin')
+
 @section('title', '登録済映画タイトル一覧')
 
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>映画一覧</h2>
+            <h2 style="color: red;">映画一覧</h2>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -32,14 +33,23 @@
                         <thead>
                             <tr>
                                 <th width="20%">ID</th>
-                                <th width="80%">タイトル</th>
+                                <th width="70%">タイトル</th>
+                                <th width="10%"></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $movie)
                                 <tr>
                                     <th>{{ $movie->id }}</th>
-                                    <td>{{ \Str::limit($movie->title, 100) }}</td>
+                                    <td>{{ str_limit($movie->title, 100) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\MovieController@edit', ['id' => $movie->id]) }}">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\MovieController@delete', ['id' => $movie->id]) }}">削除</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

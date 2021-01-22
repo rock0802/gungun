@@ -20,6 +20,7 @@
          <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
          {{-- この章の後半で作成するCSSを読み込みます --}}
          <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
+         <script src="https://kit.fontawesome.com/79902dc938.js" crossorigin="anonymous"></script>
      </head>
      <body>
          <div id="app">

@@ -147,6 +147,8 @@ return [
 
     'attributes' => [
         'title' => '映画名',
-        'character1' => 'キャラクター１'],
+        'character1' => 'キャラクター１',
+        'gunName' => '銃名',
+        'body' => '説明文'],
 
 ];

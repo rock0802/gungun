@@ -6,8 +6,8 @@
     　<div class="container">
         　<div class="row">
             　<div class="col-md-8 mx-auto">
-                　<h2>映画タイトルと登場人物を登録</h2>
-                　<form action="{{action('Admin\MovieController@register')}}" method="post"enctype="multipart/form-data">
+                　<h2 style="text-align:center; color: teal;">映画タイトルと登場人物を登録</h2>
+                　<form action="{{action('Admin\MovieController@insert')}}" method="post"enctype="multipart/form-data">
                 　    @if (count($errors) > 0)
                 　        <ul>
                 　            @foreach($errors->all() as $e)

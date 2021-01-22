@@ -1,30 +1,93 @@
 body {
-    height :800px;
-    background-image: url(Soldiers.jpg);
+    
+    background-image: url(com.jpeg);
     background-size:cover;
     
 }
-.header {
-    height:50px;
-    margin-bottom:100px;
+.head {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #006666;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #006666;    /* 枠の指定 */
+}
+.head:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #006666;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.logo {
+    padding-top:300px;
 }
 .main {
-    height:500px;
     text-align:center;
 }
-h2 {
-    color:#ff0000;
+
+.blink {
+  animation: blinkAnime 1s infinite alternate;
+  font-size:55px;
 }
-input {
-    width:500px;
-    margin-left:20px;
-    border:none;
+@keyframes blinkAnime{
+   0% { color: #000000 }
+ 100% { color: #ff0000 }
 }
 .serch {
-    margin:30px auto;
-    width:600px;
-    border:1px solid lightgray;
-    border-radius:20px;
-    padding:10px 5px;
-    box-shadow:1px 1px 1px 1px lightgray;
+    font-size:70px;
+}
+.button {
+  display       : inline-block;
+  font-size     : 70px;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #990000;     /* 背景色     */
+  color         : #000000;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #990000;    /* 枠の指定 */
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #990000;     /* 背景色     */
+  background    : #000000;     /* 文字色     */
+}
+
+.sample3oya {
+  position: relative;                  /* 指定した分だけ相対的に移動 */
+}
+.sample3oya:hover .sample3 {
+  display: inline;                     /* インライン要素として表示 */
+}
+ /* --- 吹き出し ------------------ */
+.sample3 {
+  display: none;                       /* 要素を非表示 */
+  position: absolute;                  /* 親要素を基準 */
+  padding: 2px;                        /* テキストの前後の余白 */
+  background-color: rgba(127, 0, 0, 0.75);  /* 背景色（透明度） */
+  width:180px;                         /* 吹き出し全体の幅 */
+  right : 29%;                         /* 表示位置 */
+  top:13px;
+  font-size: 80%;                      /* 文字サイズ */
+  animation: sample3Anime 1s linear;
+}
+.sample3:after{
+  border-right: 12px solid rgba(127, 0, 0, 0.75);  /* 吹き出し口の高さ・色 */
+  border-bottom: 10px solid transparent; /* 吹き出し口の幅１／２ */
+  border-top: 10px solid transparent;    /* 吹き出し口の幅１／２ */
+  left: -12px;                           /* 吹き出し口の位置調整 */
+  top : 5%;                              /* 吹き出し口の横位置 */
+  content: "";                           /* コンテンツの挿入 */
+  position: absolute;                    /* 親要素を基準 */
+}
+@keyframes sample3Anime{
+ 100% { transform: rotateY(360deg); }  /* 横回転を指定 */
 }
