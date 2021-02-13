@@ -68,5 +68,8 @@
                 　</form>
         　　　　　</div>
         </div>
+        <div>
+            <a href="." class="index">一覧へ</a>
+        </div>
     </div>
 @endsection

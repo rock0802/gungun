@@ -47,11 +47,31 @@ class GunController extends Controller
       return view('admin.gun.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
     public function edit(Request $request)
-  {
+    {
       // Gun Modelからデータを取得する
       $gun = Gun::find($request->id);
       return view('admin.gun.edit', ['gun_form' => $gun]);
-  }
-    
+    }
+    public function update(Request $request)
+    {
+       $this->validate($request,Gun::$rules);
+       $gun = Gun::find($request->id);
+       $gun_form = $request->all();
+       if($request->remove == 'true'){
+           $gun_form['image_path'] = null;
+       }elseif ($request->file('image')){
+           $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+           $gun->image_path = Storage::disk('s3')->url($path);
+       }else{
+           $gun_form['image_path'] = $gun->image_path;
+       }
+       unset($gun_form['_token']);
+       unset($gun_form['image']);
+       unset($gun_form['remove']);
+        // 該当するデータを上書きして保存する
+        $gun->fill($gun_form)->save();
+       
+       return redirect('admin/gun/');
+    }
     
 }

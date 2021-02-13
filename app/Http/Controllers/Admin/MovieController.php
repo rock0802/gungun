@@ -78,18 +78,33 @@ class MovieController extends Controller
       // Validationをかける
       $this->validate($request, movie::$rules);
       $movie = Movie::find($request->id);
-      // 送信されてきたフォームデータを格納する
-      $form = $request->only('title');
-      // 該当するデータを上書きして保存する
-      $movie->fill($form);
+      $movie->title = $request->title;
+      //$form = $request->all();
+      //$movie->fill($form);
       $movie->save();
-      
       $characterNames = $request->input('character_name');
-      foreach ($characterNames as $characterName){
-         $character = new Character;
-         $character->character_name = $characterName; 
-         $character->save();
-      }
+      $characterIds = $request->input('character_id');
+      
+      foreach ($characterNames as $k => $characterName){
+         if ($characterName ==''){
+             continue;
+         }else {
+             //var_dump($characterIds[$k]);
+             \Log::debug($characterIds[$k]);
+             //if($characterIds[$k] !== ''){
+            if(isset($characterIds[$k])){
+                 $character = Character::find($characterIds[$k]);
+                 $character->character_name = $characterName;
+                 $character->save();
+             }else {
+                 $character = new Character;
+                 $character->character_name = $characterName;
+                 $character->movies_id = $request->id;
+                 $character->save();
+             }
+         
+         }
+        }
       
       return redirect('admin/movie/');
     }
@@ -98,8 +113,11 @@ class MovieController extends Controller
     {
       // 該当するNovie Modelを取得
       $movie = Movie::find($request->id);
+      $character->movies_id　= $movie->id;
       // 削除する
+      $character->delete();
       $movie->delete();
+      
       return redirect('admin/movie/');
     } 
     

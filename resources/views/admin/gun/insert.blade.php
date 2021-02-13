@@ -24,7 +24,7 @@
                      <div class="form-group row">
                          <label class="col-md-2" for="body">説明文</label>
                          <div class="col-md-10">
-                             <textarea class="form-control" name="body" rows="15" value="{{old('body')}}"></textarea>
+                             <textarea class="form-control" name="body" rows="15">{{old('body')}}</textarea>
                          </div>
                      </div>
                      <div class="form-group row">

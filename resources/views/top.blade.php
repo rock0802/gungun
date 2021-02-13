@@ -19,7 +19,7 @@
              </h1>
           </div>
          <div class="serch">
-             <form action="movie_list.php" method="post">
+             <form action="{{ action('Admin\MovieController@index') }}" method="get">
                  <input type="text" name="title">
                  <div class="sample3oya" >
                  <input type="submit" value="OK!" class="button">

@@ -5,7 +5,6 @@
          <meta http-equiv="X-UA-Compatible" content="IE=edge">
          <meta name="viewport" content="width=device-width, initial-scale=1">
          <!-- CSRF Token -->
-         {{-- 後の章で説明します --}}
          <meta name="csrf-token" content="{{ csrf_token() }}">
          {{-- 各ページごとにtitleタグを入れるために@yieldで空けておきます。 --}}
           <title>@yield('title')</title>
@@ -67,6 +66,9 @@
               {{-- ここまでナビゲーションバー --}}
              <main class="py-4">
                  {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
+                 <div class="top">
+                     <a href="javascript:history.back()" class="back">戻る</a>
+                 </div>
                  @yield('content')
              </main>
          </div>
