@@ -71,6 +71,14 @@ class MovieController extends Controller
       
           return view('admin.movie.edit', ['movie' => $movie] ,['characters' => $characters] );
     }
+    
+    public function detail(Request $request)
+    {
+        $movie = Movie::find($request->id);
+        $characters = Character::where('movies_id', $request->id )->get()->all();
+        
+        return view('admin.movie.detail',['movie' => $movie] ,['characters' => $characters] );
+    }
 
 
     public function update(Request $request)

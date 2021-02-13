@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('movie/edit', 'Admin\MovieController@edit');
     Route::post('movie/edit', 'Admin\MovieController@update');
     Route::get('movie/delete', 'Admin\MovieController@delete');
+    Route::get('movie/detail', 'Admin\MovieController@detail');
    
     Route::get('gun/insert','Admin\GunController@add');
     Route::post('gun/insert','Admin\GunController@insert');

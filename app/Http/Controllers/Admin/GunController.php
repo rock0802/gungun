@@ -60,7 +60,7 @@ class GunController extends Controller
        if($request->remove == 'true'){
            $gun_form['image_path'] = null;
        }elseif ($request->file('image')){
-           $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+           $path = Storage::disk('s3')->putFile('/',$gun_form['image'],'public');
            $gun->image_path = Storage::disk('s3')->url($path);
        }else{
            $gun_form['image_path'] = $gun->image_path;
