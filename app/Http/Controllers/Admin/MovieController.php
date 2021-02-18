@@ -119,12 +119,18 @@ class MovieController extends Controller
 
     public function delete(Request $request)
     {
+        Character::where('movies_id', $request->id)->delete();
+      /*\Log::debug($characterIds[$k]);
+      if(isset($characterIds[$k])){
+                 $character = Character::find($characterIds[$k]);
+                 $character->delete();
+             }*/
       // 該当するNovie Modelを取得
       $movie = Movie::find($request->id);
-      $character->movies_id　= $movie->id;
       // 削除する
-      $character->delete();
       $movie->delete();
+      
+      
       
       return redirect('admin/movie/');
     } 

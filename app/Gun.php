@@ -13,4 +13,8 @@ class Gun extends Model
         'body' => 'required',
     );
     
+    public function Character()
+    {
+        return $this->belongsToMany('App\Character')->withTimestamps();
+    }
 }

@@ -11,8 +11,14 @@ class Character extends Model
     public static $rules = array(
        'character_name' => 'required'
     );
-    public function movie()
+    
+    public function movies()
     {
         return $this->belongsTo(Movie::class);
+    }
+    
+    public function Guns()
+    {
+        return $this->belongsToMany('App\Character')->withTimestamps();
     }
 }
