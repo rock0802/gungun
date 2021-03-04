@@ -24,17 +24,20 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('movie/edit', 'Admin\MovieController@update');
     Route::get('movie/delete', 'Admin\MovieController@delete');
     Route::get('movie/detail', 'Admin\MovieController@detail');
+    Route::get('character/register', 'Admin\MovieController@register');
+    Route::post('character/register', 'Admin\MovieController@store');
    
     Route::get('gun/insert','Admin\GunController@add');
     Route::post('gun/insert','Admin\GunController@insert');
     Route::get('gun','Admin\GunController@index');
     Route::get('gun/edit', 'Admin\GunController@edit');
     Route::post('gun/edit', 'Admin\GunController@update');
-    
+    Route::get('gun/detail', 'Admin\GunController@detail');
 });
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about', 'HomeController@about');
 

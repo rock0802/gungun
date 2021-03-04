@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Storage;
 use App\Gun;
+use App\Movie;
+use App\Character;
+use DB;
+
 
 class GunController extends Controller
 {
@@ -40,18 +44,20 @@ class GunController extends Controller
     {
         $cond_title = $request->cond_title;
       if ($cond_title != '') {
-          $posts = Gun::where('gunName', $cond_title)->get();
+          $posts = Gun::orderBy('gunName', 'asc')->where('gunName', $cond_title)->get()->paginate(10);
       } else {
-          $posts = Gun::all();
+          $posts = Gun::orderBy('gunName', 'asc')->paginate(10);
       }
       return view('admin.gun.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
+    
     public function edit(Request $request)
     {
       // Gun Modelからデータを取得する
       $gun = Gun::find($request->id);
       return view('admin.gun.edit', ['gun_form' => $gun]);
     }
+    
     public function update(Request $request)
     {
        $this->validate($request,Gun::$rules);
@@ -74,4 +80,30 @@ class GunController extends Controller
        return redirect('admin/gun/');
     }
     
+    public function detail(Request $request)
+    {
+        $characters = Gun::find($request->id)->characters;
+        $movies = [];
+        
+        foreach ($characters as $character) {
+            $movies[$character->movie->id]['movie'] = $character;
+            $movies[$character->movie->id]['characters'][] = $character;    
+           
+        }
+       /* var_dump($movies);
+        exit;
+        var_dump($characters->toArray());
+        exit;*/
+        
+        $gun = Gun::find($request->id);
+       
+       
+        return view('admin.gun.detail', compact('gun','movies','characters'));
+    }
+    
+     public function show($id)
+    {
+    $gun = Gun::find($id);
+    return view('admin.gun.show', compact('gun'));
+    }
 }

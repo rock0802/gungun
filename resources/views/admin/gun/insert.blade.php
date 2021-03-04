@@ -24,7 +24,7 @@
                      <div class="form-group row">
                          <label class="col-md-2" for="body">説明文</label>
                          <div class="col-md-10">
-                             <textarea class="form-control" name="body" rows="15">{{old('body')}}</textarea>
+                             <textarea class="form-control" name="body" rows="25">{{old('body')}}</textarea>
                          </div>
                      </div>
                      <div class="form-group row">
@@ -36,6 +36,9 @@
                      {{csrf_field()}}
                      <input type="submit" class="btn btn-primary" value="更新">
                  </form>
+                 <div>
+                     <a href="." class="index">一覧へ</a>
+                 </div>
              </div>
          </div>
      </div>

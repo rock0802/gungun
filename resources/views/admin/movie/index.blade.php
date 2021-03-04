@@ -27,14 +27,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="list-news col-md-12 mx-auto">
-                <div class="row">
+            <div class="list-movies col-md-12 mx-auto">
+                <div class="row" style="text-align:center;">
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="20%">ID</th>
-                                <th width="70%">タイトル</th>
-                                <th width="10%"></th>
+                                <th width="10%">ID</th>
+                                <th width="80%">タイトル</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,6 +55,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $posts->links() }}
+                </div>
+                <div>
+                    <a href="../home" class="index">管理マスタ</a>
                 </div>
             </div>
         </div>

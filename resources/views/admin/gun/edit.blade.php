@@ -24,7 +24,7 @@
                      <div class="form-group row">
                          <label class="col-md-2" for="body">説明文</label>
                          <div class="col-md-10">
-                             <textarea class="form-control" name="body" rows="15">{{ $gun_form->body }}</textarea>
+                             <textarea class="form-control" name="body" rows="25">{{ $gun_form->body }}</textarea>
                          </div>
                      </div>
                      <div class="form-group row">
@@ -49,6 +49,9 @@
                          </div>
                      </div>
                  </form>
+                 <div>
+                     <a href="." class="index">一覧へ</a>
+                 </div>
              </div>
          </div>
      </div>

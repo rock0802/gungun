@@ -12,13 +12,15 @@ class Character extends Model
        'character_name' => 'required'
     );
     
-    public function movies()
+    public function movie()
     {
-        return $this->belongsTo(Movie::class);
+        return $this->belongsTo('App\Movie', 'movies_id', 'id');
     }
     
     public function Guns()
     {
-        return $this->belongsToMany('App\Character')->withTimestamps();
+        return $this->belongsToMany('App\Gun')->withTimestamps();
     }
+    
+    
 }

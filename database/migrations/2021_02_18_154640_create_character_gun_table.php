@@ -14,7 +14,7 @@ class CreateCharacterGunTable extends Migration
     public function up()
     {
         Schema::create('character_gun', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('character_id');
             $table->unsignedBigInteger('gun_id');
             $table->foreign('character_id')->references('id')->on('characters')->onDelete('cascade');
