@@ -32,15 +32,15 @@
                  <table class="table table-dark">
                      <thead style="text-align:center;">
                          <tr>
-                             <th width="30%">作品名</th>
-                             <th width="70%">使用キャラクター</th>
+                             <th width="40%">作品名</th>
+                             <th width="60%">使用キャラクター</th>
                          </tr>
                      </thead>
                      <tbody>
                          @foreach($movies as $movieId => $movie)
                              <tr>
                                  <td>
-                                     <a href="{{ action('Admin\MovieController@detail', ['id' => $movieId]) }}">{{ $movie['title'] }}</a>
+                                     <a href="{{ action('MovieController@detail', ['id' => $movieId]) }}">{{ $movie['title'] }}</a>
                                  </td>
                                  <td style="text-align:left;">
                                      @foreach($movie['characters'] as $character )
@@ -52,6 +52,9 @@
                      </tbody>
                  </table>
              </div>
+         </div>
+         <div>
+             <a href="." class="index">一覧へ</a>
          </div>
      </div>
 @endsection

@@ -26,9 +26,6 @@ body {
 .logo {
     padding-top:300px;
 }
-.main {
-    text-align:center;
-}
 
 .blink {
   animation: blinkAnime 1s infinite alternate;
@@ -91,3 +88,41 @@ body {
  100% { transform: rotateY(360deg); }  /* 横回転を指定 */
 }
 
+
+.side_bar {
+  width:180px;
+  min-height:500px;
+  height:auto;
+  background-color:rgba(200,200,200,0.8);
+  float:left;
+  margin-top:50px;
+}
+
+.main {
+  text-align:center;
+  margin-left:360px;
+  width:720px;
+  min-height:500px;
+  height:auto;
+  margin-top:10px;
+}
+
+.side_btn {
+  display       : inline-block;
+  border-radius : 20%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #1a1aff;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #1a1aff;    /* 枠の指定 */
+}
+.side_btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #1a1aff;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}

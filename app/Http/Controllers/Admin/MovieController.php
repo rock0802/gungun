@@ -55,7 +55,7 @@ class MovieController extends Controller
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
             // 検索されたら検索結果を取得する
-            $posts = Movie::where('title', $cond_title)->get()->paginate(10);
+            $posts = Movie::where('title', 'like', '%' . $cond_title . '%')->paginate(10);
         } else {
         // それ以外はすべてのニュースを取得する
            $posts = Movie::paginate(10);

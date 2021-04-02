@@ -12,7 +12,7 @@
                  <a href="{{ action('Admin\GunController@add') }}" role="button" class="btn btn-primary">新規作成</a>
              </div>
              <div class="col-md-8">
-                 <fotm action="{{ action('Admin\GunController@index') }}" method="get">
+                 <form action="{{ action('Admin\GunController@index') }}" method="get">
                      <div class="form-group row">
                          <label class="col-md-2">銃名</label>
                          <div class="col-md-8">
@@ -23,7 +23,7 @@
                              <input type="submit" class="btn btn-primary" value="検索">
                          </div>
                      </div>
-                 </fotm>
+                 </form>
              </div>
          </div>
          <div class="row">

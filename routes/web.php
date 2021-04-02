@@ -40,4 +40,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about');
+Route::get('movie', 'MovieController@index');
+Route::get('movie/detail', 'MovieController@detail');
+Route::get('gun', 'GunController@index');
+Route::get('gun/detail', 'GunController@detail');
 

@@ -3,6 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/css/top.css": "/css/top.css",
     "/css/admin.css": "/css/admin.css",
+    "/css/guest.css": "/css/guest.css",
     "/css/about.css": "/css/about.css",
     "/css/home.css": "/css/home.css",
     "/js/hoge.js": "/js/hoge.js"

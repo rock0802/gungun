@@ -43,12 +43,12 @@ class GunController extends Controller
     public function index(Request $request)
     {
         $cond_title = $request->cond_title;
-      if ($cond_title != '') {
-          $posts = Gun::orderBy('gunName', 'asc')->where('gunName', $cond_title)->get()->paginate(10);
+        if ($cond_title != '') {
+             $posts = Gun::orderBy('gunName', 'asc')->where('gunName', 'like', '%' . $cond_title . '%')->paginate(10);
       } else {
-          $posts = Gun::orderBy('gunName', 'asc')->paginate(10);
+             $posts = Gun::orderBy('gunName', 'asc')->paginate(10);
       }
-      return view('admin.gun.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+        return view('admin.gun.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
     
     public function edit(Request $request)
@@ -83,18 +83,19 @@ class GunController extends Controller
     public function detail(Request $request)
     {
         $characters = Gun::find($request->id)->characters;
+        //配列を宣言
         $movies = [];
         
         foreach ($characters as $character) {
-            $movies[$character->movie->id]['movie'] = $character;
-            $movies[$character->movie->id]['characters'][] = $character;    
+            $movies[$character->movie->id]['title'] = $character->movie->title;
+            $movies[$character->movie->id]['characters'][] = $character;     
            
         }
-       /* var_dump($movies);
+        /*var_dump($movies);
         exit;
-        var_dump($characters->toArray());
+        /*var_dump($characters->toArray());
         exit;*/
-        
+       
         $gun = Gun::find($request->id);
        
        

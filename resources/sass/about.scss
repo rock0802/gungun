@@ -1,6 +1,40 @@
 body {
     background-color: gray;
+    background-size: cover;
 }
 .p {
     white-space: pre-wrap;
+}
+.back {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #003300;     /* 背景色     */
+  color         : #999999;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #003300;    /* 枠の指定 */
+}
+.back:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #003300;     /* 背景色     */
+  background    : #999999;     /* 文字色     */
+}
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.row {
+    font-size : 30px;
+    text-align : center;
+    font-color : yellow;
+    
+}
+.top {
+    margin-top : 20px;
 }
